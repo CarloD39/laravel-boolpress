@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+//use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth'); // without you're already logged in
     }
 
     /**
@@ -24,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        //$user = Auth::user();
+        
+        //if(empty($user)){
+        //    return 'You must be logged!';
+        //}
+        
 
         $allPosts = Post::all();
 
