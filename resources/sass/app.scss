@@ -6,3 +6,29 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Bootstrap Icons
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+
+.posts-container{
+
+    background-color: white;
+
+    table{
+        img{
+            width: 100%;
+        }
+
+    }
+}
+
+
+.show-post-container{
+    background-color: rgb(255, 255, 255);
+
+    img{
+        width: 640px;
+        height: 482px;
+    }
+}

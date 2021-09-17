@@ -22,7 +22,7 @@ class PostsTableSeeder extends Seeder
             $postObject->abstract = $faker->paragraph(2);
             $postObject->status = $faker->words(1,true);
             $postObject->cover = $faker->imageUrl(640, 482, 'posts', true);
-            $postObject->like = $faker->randomFloat(0, 1, 1000);
+            $postObject->like = $faker->number(0, 1, 1000);
             $postObject->comment_user = $faker->paragraph(1);
             $postObject->save();
         }
