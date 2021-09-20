@@ -6,7 +6,7 @@
 
 <div class="container posts-container">
 
-    <form action="{{ route('posts.update, $post') }}" method="POST">
+    <form action="{{ route('posts.update', $post) }}" method="POST">
         @csrf
         @method('PUT')
 

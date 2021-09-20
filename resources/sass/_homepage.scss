@@ -1,0 +1,42 @@
+
+.card {
+    position: relative;
+    margin-bottom: 25px;
+
+
+    .card-picture{
+        width: 250px;
+        
+        
+    
+        .post-picture{
+            width: 100%;
+        }
+    }
+
+    .description-post{
+        height: 350px;
+
+
+        .status-post{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+
+    
+    .action-post{
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    
+    
+}
+
+
+
+
+
+

@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container posts-container">
-  <a href="/posts/create"><i class="bi bi-pencil-fill"></i></a>
+  <a href="/posts/create">
+    <button type="submit" class="btn btn-primary"><i class="bi bi-plus-square"></i></button>
+  </a>
   <table class="table">
     <thead>
       <tr>
@@ -25,7 +27,25 @@
               <td>{{$post->comment_user}}</td>
               <td><img src="{{$post->cover}}" alt=""></td>
               <td>{{$post->like}}</td>
-              <td><a href="/posts/{{$post->id}}"><i class="bi bi-search"></i></a></td>
+              <td>
+
+                <a href="{{ route('posts.show', $post) }}">
+                  <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                </a>
+
+                <a href="{{ route('posts.edit', $post) }}">
+                  <button type="submit" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
+                </a>
+                        
+                <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+
+                  <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                  
+                </form>
+
+              </td>
           </tr>
       @endforeach
     </tbody>

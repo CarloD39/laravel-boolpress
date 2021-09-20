@@ -21,16 +21,36 @@
     </div>
 </div>
 
+
+<div class="container">
+    <div class="row">
         @foreach($allPosts as $post)
-            <div>
-                <h1>{{$post->author}}</h1>
-                <span>{{$post->status}}</span>
-                <div>{{$post->abstract}}</div>
-                <img src="{{$post->cover}}" alt="">
-                <div>{{$post->like}}</div>
-                <div>{{$post->comment_user}}</div>
-            </div> 
+                <div class="card col-md-4">
+                    <div class="card-picture">
+                        <img class="post-picture" src="{{$post->cover}}" alt="">
+                    </div>
+                    <div class="description-post">
+                        <h3 class="title-author">{{$post->author}}</h3>
+                        <span class="status-post">{{$post->status}}</span>
+                        <p class="about">{{$post->abstract}}</p>
+                        <span>{{$post->like}}</span>
+                        <p class="comment">{{$post->comment_user}}</p>
+                    </div>
+                    <div class="action-post">
+                        <a href="{{ route('posts.show', $post) }}">
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                        </a>                 
+                    </div>        
+                </div>                                               
         @endforeach
+    </div>
+</div>
+            
+                
+                    
+                
+            
+        
     
 
 @endsection

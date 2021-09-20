@@ -12332,6 +12332,34 @@ a.text-dark:focus {
   }
 }
 
+.card {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.card .card-picture {
+  width: 250px;
+}
+
+.card .card-picture .post-picture {
+  width: 100%;
+}
+
+.card .description-post {
+  height: 350px;
+}
+
+.card .description-post .status-post {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card .action-post {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+}
+
 .posts-container {
   background-color: #FEE055;
   font: #141214;
