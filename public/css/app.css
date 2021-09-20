@@ -12333,11 +12333,18 @@ a.text-dark:focus {
 }
 
 .posts-container {
-  background-color: white;
+  background-color: #FEE055;
+  font: #141214;
+  border-radius: 10px;
 }
 
 .posts-container table img {
   width: 100%;
+}
+
+.posts-container .post-article:hover {
+  background-color: #F4C900;
+  opacity: 0.9;
 }
 
 .show-post-container {

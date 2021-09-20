@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container posts-container">
+  <a href="/posts/create"><i class="bi bi-pencil-fill"></i></a>
   <table class="table">
     <thead>
       <tr>
@@ -17,7 +18,7 @@
     </thead>
     <tbody>
       @foreach ($allPosts as $post)
-          <tr>  
+          <tr class="post-article">  
               <th scope="row">{{$post->id}}</th>
               <td>{{$post->author}}</td>
               <td>{{$post->abstract}}</td>

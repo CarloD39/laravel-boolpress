@@ -10,16 +10,26 @@
 // Bootstrap Icons
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
+//------------------------------------------------------
 
 .posts-container{
 
-    background-color: white;
+    background-color: #FEE055;
+
+    font: #141214;
+
+    border-radius: 10px;
 
     table{
         img{
             width: 100%;
         }
 
+    }
+
+    .post-article:hover{
+        background-color: #F4C900;
+        opacity: 0.9;
     }
 }
 

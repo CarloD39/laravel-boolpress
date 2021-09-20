@@ -21,13 +21,13 @@ class PostController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * Mostra un formlm vuoto pep popolare tutti idati del
+     * Mostra un form vuoto pep popolare tutti idati del
      * nostro modello
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -37,9 +37,34 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'cover'=> 'url',
+            'author' => 'max:50'
+        ]);
+
+        //recupero dati dalla request
+        //creo un oggetto dal modello Post
+        //setto tutti i parametri con i dati della request
+        //$post->save()
+        //dd($request);
+        $data = $request->all();
+
+        $post = new Post();
+        $post->author = $data['author'];
+        $post->abstract = $data['abstract'];
+        $post->status = $data['status'];
+        $post->cover = $data['cover'];
+        $post->like = $data['like'];
+        $post->comment_user = $data['comment_user'];
+        $post->save();
+
+        return redirect()->route('posts.show', $post->id);
+
+        
     }
 
     /**
@@ -50,10 +75,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //dump($id);
+       
         $post = Post::find($id);
-        //dump($post);
-
         return view('posts.show', compact('post'));
     }
 
@@ -63,9 +86,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
